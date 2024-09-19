@@ -92,6 +92,7 @@ img {
     height: 4px;
     background-color: black;
     background-color: var(--highlite);
+    pointer-events: none;
 }
 
 ::selection {
