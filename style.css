@@ -74,6 +74,11 @@ video {
 }
 
 
+.top {
+    position: relative;
+    z-index: 100;
+}
+
 @keyframes slide-right {
     0% {
         margin-left: 0;
