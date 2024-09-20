@@ -132,8 +132,19 @@ line {
 
 
 @media only screen and (max-width: 800px) {
+    .container {
+        margin-bottom: 30vh;
+        overflow-x: hidden;
+    }
 
     .box {
-        min-width: 150px !important;
+        width: 100% !important;
+        height: fit-content !important;
     }
+
+    .box:not(.animate-right):not(.animate-left) {
+        margin-left: 0 !important;
+    }
+    
+
 }
