@@ -73,6 +73,10 @@ video {
     margin: 20px;
 }
 
+.box p:last-of-type {
+    padding-bottom: 50px;
+}
+
 
 @keyframes slide-right {
     0% {
