@@ -1,15 +1,18 @@
 html {
     --highlite: lime;
     background-color: var(--highlite);
+    width: 100%;
+    height: 100%;
 }
 
 body {
     font-family: Inter, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: white;
     font-size: clamp(14px, 1vw, 24px);
     width: 100vw;
+    height: 100%;
     overflow-x: hidden;
     text-rendering: optimizeSpeed;
 }
@@ -48,6 +51,7 @@ video {
     height: 70vh;
     height: fit-content;
     padding: 10px;
+    background-color: #f0f0f0;
 }
 
 #svgContainer {
@@ -132,12 +136,18 @@ line {
 
 .info {
     display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    height: 100%;
     gap: 10px;
     background-color: white;
 }
 
 .info div {
+    flex: 1;
+    min-width: 150px;
     max-width: 300px;
+    height: 100%;
 }
 
 @font-face {
