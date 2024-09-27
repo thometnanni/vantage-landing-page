@@ -109,11 +109,11 @@ video {
 
 
 .animate-right {
-    animation: slide-right 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: slide-right 30s infinite;
 }
 
 .animate-left {
-    animation: slide-left 20s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    animation: slide-left 30s infinite;
 }
 
 line {
@@ -150,6 +150,6 @@ line {
     .box:not(.animate-right):not(.animate-left) {
         margin-left: 0 !important;
     }
-    
+
 
 }
