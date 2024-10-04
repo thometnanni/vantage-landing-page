@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    font-family: Inter, sans-serif;
+    font-family: space, Inter, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
@@ -119,6 +119,11 @@ line {
 @font-face {
     font-family: inter;
     src: url("assets/inter.woff2");
+}
+
+@font-face {
+    font-family: space;
+    src: url("assets/SpaceGrotesk-Regular.woff2");
 }
 
 .rotate {
