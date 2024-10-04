@@ -1,3 +1,5 @@
+let previousWidth = window.innerWidth;
+
 function updateAllLines() {
     const svg = document.getElementById('svgContainer');
     const boxPairs = svg.querySelectorAll('.box-pair');
@@ -57,7 +59,6 @@ function getBoxCorners(element, group = null) {
     return corners;
 }
 
-
 function updateLine(line, point1, point2) {
     line.setAttribute('x1', point1.x);
     line.setAttribute('y1', point1.y);
@@ -65,8 +66,13 @@ function updateLine(line, point1, point2) {
     line.setAttribute('y2', point2.y);
 }
 
+window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+
+    if (currentWidth !== previousWidth) {
+        previousWidth = currentWidth;
+        updateAllLines();
+    }
+});
 
 updateAllLines();
-
-// window.addEventListener('load', updateAllLines);
-window.addEventListener('resize', updateAllLines);
