@@ -1,4 +1,3 @@
-
 html {
     --highlite: lime;
     --stroke: black;
@@ -66,7 +65,7 @@ video {
     height: 200px;
     top: 0;
     left: 0;
-    transform: translate(20px, 150px) rotate(-25deg);
+    transform: translate(0px, 120px) rotate(-25deg);
     transform-origin: top left;
     background-color: white;
 }
@@ -124,18 +123,11 @@ line {
 }
 
 .rotate {
-    transform: translate(20px, 150px) rotate(-25deg);
+    transform: translate(0px, 120px) rotate(-25deg);
     transform-origin: top left;
 }
 
 @media only screen and (max-width: 800px) {
-    .rotate {
-        transform: translate(0px, 120px) rotate(-25deg) !important;
-    }
-
-    .overlay-text {
-        transform: translate(0px, 120px) rotate(-25deg) !important;
-    }
 
     #svgContainer {
         height: 80vh;
