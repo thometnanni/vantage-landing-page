@@ -49,8 +49,7 @@ video {
 #svgContainer {
     position: relative;
     width: 100vw;
-    height: 80vh;
-    min-height: 650px;
+    height: 680px;
     display: block;
     pointer-events: none;
 }
@@ -72,7 +71,7 @@ video {
 
 .overlay-video {
     width: 65%;
-    height: 50vh;
+    height: 400px;
     top: 250px;
     left: 30%;
     background-color: white;
@@ -125,11 +124,4 @@ line {
 .rotate {
     transform: translate(0px, 128px) rotate(-25deg);
     transform-origin: top left;
-}
-
-@media only screen and (max-width: 800px) {
-
-    #svgContainer {
-        height: 80vh;
-    }
 }
