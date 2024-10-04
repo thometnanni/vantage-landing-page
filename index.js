@@ -1,83 +1,72 @@
-function getTransformedBoxCorners(box) {
-    const rect = box.getBoundingClientRect();
-    const style = window.getComputedStyle(box);
-    const transform = style.transform;
-    const containerRect = document.getElementById('container').getBoundingClientRect();
-    const borderWidth = parseFloat(style.borderWidth) || 0; 
+function updateAllLines() {
+    const svg = document.getElementById('svgContainer');
+    const boxPairs = svg.querySelectorAll('.box-pair');
 
-    if (transform === 'none') {
-        return {
-            topLeft: { x: rect.left - containerRect.left + borderWidth / 2, y: rect.top - containerRect.top + borderWidth / 2 },
-            topRight: { x: rect.right - containerRect.left - borderWidth / 2, y: rect.top - containerRect.top + borderWidth / 2 },
-            bottomLeft: { x: rect.left - containerRect.left + borderWidth / 2, y: rect.bottom - containerRect.top - borderWidth / 2 },
-            bottomRight: { x: rect.right - containerRect.left - borderWidth / 2, y: rect.bottom - containerRect.top - borderWidth / 2 },
-        };
-    }
+    boxPairs.forEach(pair => {
+        const boxes = pair.querySelectorAll('.box');
 
-    const matrix = new DOMMatrix(transform);
+        if (boxes.length === 2) {
+            const box1 = boxes[0];
+            const box2 = boxes[1];
+
+            const boxGroup1 = box1.closest('.box-group') || box1;
+            const boxGroup2 = box2.closest('.box-group') || box2;
+
+            const corners1 = getBoxCorners(box1, boxGroup1);
+            const corners2 = getBoxCorners(box2, boxGroup2);
+
+            const lines = pair.querySelectorAll('.connector-line');
+
+            if (lines.length >= 4) {
+                updateLine(lines[0], corners1.topLeft, corners2.topLeft);
+                updateLine(lines[1], corners1.topRight, corners2.topRight);
+                updateLine(lines[2], corners1.bottomRight, corners2.bottomRight);
+                updateLine(lines[3], corners1.bottomLeft, corners2.bottomLeft);
+            }
+        }
+    });
+}
+
+function getBoxCorners(element, group = null) {
+    const svg = document.getElementById('svgContainer');
+    const bbox = element.getBBox();
+    const matrix = (group || element).getScreenCTM();
 
     const corners = {
-        topLeft: applyMatrixToPoint({ x: rect.left, y: rect.top }, matrix, containerRect, borderWidth),
-        topRight: applyMatrixToPoint({ x: rect.right, y: rect.top }, matrix, containerRect, borderWidth),
-        bottomLeft: applyMatrixToPoint({ x: rect.left, y: rect.bottom }, matrix, containerRect, borderWidth),
-        bottomRight: applyMatrixToPoint({ x: rect.right, y: rect.bottom }, matrix, containerRect, borderWidth)
+        topLeft: svg.createSVGPoint(),
+        topRight: svg.createSVGPoint(),
+        bottomRight: svg.createSVGPoint(),
+        bottomLeft: svg.createSVGPoint()
     };
+
+    corners.topLeft.x = bbox.x;
+    corners.topLeft.y = bbox.y;
+    corners.topRight.x = bbox.x + bbox.width;
+    corners.topRight.y = bbox.y;
+    corners.bottomRight.x = bbox.x + bbox.width;
+    corners.bottomRight.y = bbox.y + bbox.height;
+    corners.bottomLeft.x = bbox.x;
+    corners.bottomLeft.y = bbox.y + bbox.height;
+
+    for (let key in corners) {
+        if (matrix) {
+            corners[key] = corners[key].matrixTransform(matrix);
+        }
+    }
 
     return corners;
 }
 
-function applyMatrixToPoint(point, matrix, containerRect, borderWidth) {
-    const transformedPoint = matrix.transformPoint(new DOMPoint(point.x, point.y));
 
-    return {
-        x: transformedPoint.x - containerRect.left + borderWidth / 2,
-        y: transformedPoint.y - containerRect.top + borderWidth / 2
-    };
+function updateLine(line, point1, point2) {
+    line.setAttribute('x1', point1.x);
+    line.setAttribute('y1', point1.y);
+    line.setAttribute('x2', point2.x);
+    line.setAttribute('y2', point2.y);
 }
 
-function createLine(svg, point1, point2) {
-    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
 
-    line.setAttribute("x1", point1.x);
-    line.setAttribute("y1", point1.y);
-    line.setAttribute("x2", point2.x);
-    line.setAttribute("y2", point2.y);
-    line.setAttribute("stroke", "lime");
-    line.setAttribute("stroke-width", "4");
+updateAllLines();
 
-    svg.appendChild(line);
-}
-
-function connectBoxesInPair(pair) {
-    const boxes = pair.querySelectorAll('.box');
-    const svg = document.getElementById('svgContainer');
-
-    if (boxes.length === 2) {
-        const box1 = boxes[0];
-        const box2 = boxes[1];
-
-        const corners1 = getTransformedBoxCorners(box1);
-        const corners2 = getTransformedBoxCorners(box2);
-
-        createLine(svg, corners1.topLeft, corners2.topLeft);
-        createLine(svg, corners1.topRight, corners2.topRight);
-        createLine(svg, corners1.bottomLeft, corners2.bottomLeft);
-        createLine(svg, corners1.bottomRight, corners2.bottomRight);
-    }
-}
-
-function connectAllPairs() {
-    const pairs = document.querySelectorAll('.pair');
-    const svg = document.getElementById('svgContainer');
-    svg.innerHTML = '';  
-
-    pairs.forEach(pair => connectBoxesInPair(pair));
-}
-
-function updateLines() {
-    connectAllPairs();
-    requestAnimationFrame(updateLines);
-}
-
-window.addEventListener('load', updateLines);
-window.addEventListener('scroll', updateLines);
+window.addEventListener('load', updateAllLines);
+window.addEventListener('resize', updateAllLines);

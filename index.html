@@ -6,58 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vantage</title>
     <link rel="stylesheet" href="/style.css">
-    <script type="module" src="/index.js" defer></script>
+    <script rel="preload" type="module" src="/index.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
 </head>
 
 <body>
     <div class="container" id="container">
-
-        <div class="pair">
-            <div class="box" style="width: 20vw; height: fit-content;">
-                <p>Funded by <a href="https://prototypefund.de/project/vantage/" target="_blank"
-                        rel="noopener noreferrer">Prototype Fund</a>, Vantage reconstructs
-                    the spacial context of video recordings.</p>
-            </div>
-            <div class="box top animate-left" style="width: 60vw; height: 30vw;">
-                <video autoplay muted loop src="assets/vantage.webm"></video>
-            </div>
+        <div class="overlay overlay-video">
+            <video autoplay loop muted src="assets/vantage.webm"></video>
         </div>
+
+        <div class="overlay overlay-text">
+            <p>
+                Funded by <a href="https://prototypefund.de/project/vantage/" target="_blank"
+                    rel="noopener noreferrer">Prototype Fund</a>, Vantage reconstructs the spatial
+                context of video recordings.
+            </p>
+        </div>
+        <svg id="svgContainer" xmlns="http://www.w3.org/2000/svg">
+            <g class="box-pair">
+                <g class="box box-group rotate">
+                    <rect x="0" y="0" width="300" height="200" />
+                </g>
+
+                <g class="lines">
+                    <line class="connector-line" stroke="var(--stroke, lime)" stroke-width="2" />
+                    <line class="connector-line" stroke="var(--stroke, lime)" stroke-width="2" />
+                    <line class="connector-line" stroke="var(--stroke, lime)" stroke-width="2" />
+                    <line class="connector-line" stroke="var(--stroke, lime)" stroke-width="2" />
+                </g>
+
+                <g class="box box-group box">
+                    <rect x="30%" y="250" width="65%" height="50vh" />
+                </g>
+            </g>
+        </svg>
 
         <div class="info">
             <div>
                 <p>Vantage is a tool designed for fact-checkers, investigative journalists and OSINT practitioners,
-                    particularly
-                    those working independently or in smaller teams.
-                </p>
-
+                    particularly those working independently or in smaller teams.</p>
             </div>
             <div>
-                <p>
-                    It leverages <em>photomatching</em> techniques to handle 3D material, geospatial data, videos, and
-                    images directly within a web-based platform.
-                </p>
-                <p>
-                    By projecting these elements onto dynamic 3D environments, Vantage allows researchers to reconstruct
-                    scenes and analyze spatial relationships within footage.
-                </p>
-
+                <p>It leverages <em>photomatching</em> techniques to handle 3D material, geospatial data, videos, and
+                    images directly within a web-based platform.</p>
+                <p>By projecting these elements onto dynamic 3D environments, Vantage allows researchers to reconstruct
+                    scenes and analyze spatial relationships within footage.</p>
             </div>
             <div>
-                <p>
-                    The platform is a gateway to in-depth exploration, echoing forensic methodologies, yet freely
-                    accessible and open-source.
-                </p>
+                <p>The platform is a gateway to in-depth exploration, echoing forensic methodologies, yet freely
+                    accessible and open-source.</p>
             </div>
             <div>
-                <p>Follow its development
-                    <a href="https://github.com/thometnanni/vantage">here</a>,
-                    <br>
-                    Or contact us <a href="mailto:thometnanni@protonmail.com">here</a> to learn more.
-                </p>
+                <p>Follow its development <a href="https://github.com/thometnanni/vantage">here</a>,<br>Or contact us <a
+                        href="mailto:thometnanni@protonmail.com">here</a> to learn more.</p>
             </div>
         </div>
-        <svg id="svgContainer" style="position: absolute;  height: 100%; pointer-events: none;"></svg>
+    </div>
+    <script src="/index.js"></script>
 </body>
 
 </html>
