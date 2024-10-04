@@ -65,7 +65,7 @@ video {
     height: 200px;
     top: 0;
     left: 0;
-    transform: translate(0px, 120px) rotate(-25deg);
+    transform: translate(0px, 128px) rotate(-25deg);
     transform-origin: top left;
     background-color: white;
 }
@@ -123,7 +123,7 @@ line {
 }
 
 .rotate {
-    transform: translate(0px, 120px) rotate(-25deg);
+    transform: translate(0px, 128px) rotate(-25deg);
     transform-origin: top left;
 }
 
