@@ -68,5 +68,5 @@ function updateLine(line, point1, point2) {
 
 updateAllLines();
 
-window.addEventListener('load', updateAllLines);
+// window.addEventListener('load', updateAllLines);
 window.addEventListener('resize', updateAllLines);
