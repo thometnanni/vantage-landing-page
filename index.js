@@ -54,6 +54,8 @@ function getBoxCorners(element, group = null) {
         if (matrix) {
             corners[key] = corners[key].matrixTransform(matrix);
         }
+
+        corners[key].y += window.scrollY; 
     }
 
     return corners;
@@ -68,11 +70,13 @@ function updateLine(line, point1, point2) {
 
 window.addEventListener('resize', () => {
     const currentWidth = window.innerWidth;
-
     if (currentWidth !== previousWidth) {
         previousWidth = currentWidth;
         updateAllLines();
     }
 });
+
+window.addEventListener('load', updateAllLines);
+window.addEventListener('scroll', updateAllLines);
 
 updateAllLines();
