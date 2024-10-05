@@ -14,7 +14,7 @@ body {
     padding: 0;
     background-color: #f0f0f0;
     font-size: clamp(16px, 1vw, 26px);
-    line-height: clamp(18px, 1.2vw, 28px);
+    line-height: clamp(20px, 1.4vw, 30px);
     width: 100vw;
     height: 100%;
     text-rendering: geometricprecision;
@@ -125,6 +125,14 @@ line {
 @font-face {
     font-family: space;
     src: url("assets/SpaceGrotesk-Regular.woff2");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: space;
+    src: url("assets/SpaceGrotesk-Medium.woff2");
+    font-weight: bold;
+
 }
 
 .rotate {
