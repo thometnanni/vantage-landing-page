@@ -50,7 +50,7 @@ video {
 #svgContainer {
     position: relative;
     width: 100vw;
-    height: 680px;
+    height: 620px;
     display: block;
     pointer-events: none;
 }
@@ -73,7 +73,7 @@ video {
 .overlay-video {
     width: 65%;
     height: 400px;
-    top: 250px;
+    top: 200px;
     left: 30%;
     background-color: white;
 }
