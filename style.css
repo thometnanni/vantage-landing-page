@@ -129,6 +129,12 @@ line {
     height: 100%;
 }
 
+.prototype-url {
+    position: relative;
+    bottom: 2em;
+    left: .5em;
+    pointer-events: all;
+}
 
 @font-face {
     font-family: inter;
