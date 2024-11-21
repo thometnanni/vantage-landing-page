@@ -21,6 +21,11 @@ body {
     text-rendering: geometricprecision;
 }
 
+h4 {
+    margin: 0;
+    padding: 10px;
+}
+
 p {
     margin: 0;
     padding: 10px;
@@ -134,6 +139,19 @@ line {
     bottom: 2em;
     left: .5em;
     pointer-events: all;
+}
+
+
+
+ol {
+    font-size: .9rem;
+}
+
+ol, li {
+    margin-block-start: 0;
+    margin-left: 5px;
+    padding: 0;
+    margin-bottom: 10px;
 }
 
 @font-face {
