@@ -162,10 +162,6 @@ li {
     margin-bottom: 10px;
 }
 
-@font-face {
-    font-family: inter;
-    src: url("assets/inter.woff2");
-}
 
 @font-face {
     font-family: space;
