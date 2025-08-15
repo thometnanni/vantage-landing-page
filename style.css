@@ -143,9 +143,10 @@ line {
 
 .prototype-url {
   position: relative;
-  bottom: 2em;
+  bottom: 2.2em;
   left: 0.5em;
   pointer-events: all;
+  font-size: 0.8rem;
 }
 
 ol {
@@ -174,7 +175,7 @@ li {
 }
 
 .carousel img {
-  flex: 0 0 350px;
+  /* flex: 0 0 350px; */
   height: 420px;
   object-fit: cover;
   scroll-snap-align: start;
