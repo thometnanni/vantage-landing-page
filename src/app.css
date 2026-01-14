@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+html {
+  --highlite: lime;
+  --stroke: black;
+  --stroke-width: 2;
+
+  background-color: var(--highlite);
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: space, Inter, sans-serif;
+  font-feature-settings: "liga", "ss03", "ss02";
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-size: clamp(16px, 1vw, 20px);
+  line-height: clamp(20px, 1.2vw, 24px);
+  width: 100%;
+  height: 100%;
+  text-rendering: geometricprecision;
+  overflow-x: hidden;
+}
+
+.introContainer {
+  position: relative;
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
+#svgContainer {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  display: block;
+  pointer-events: none;
+
+}
+
+rect {
+  stroke: var(--stroke);
+  stroke-width: var(--stroke-width);
+  fill: none;
+}
+
+line {
+  stroke: var(--stroke);
+  stroke-width: var(--stroke-width);
+  pointer-events: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  background-color: var(--highlite);
+  border-radius: 20px;
+  padding: 0px 5px;
+}
+
+a.link {
+  background-color: unset;
+  text-decoration: underline;
+  text-decoration-color: var(--highlite);
+  text-underline-offset: 2px;
+  padding: 0;
+}
+
+::selection {
+  color: black;
+  background-color: var(--highlite);
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  height: 100%;
+  gap: 10px;
+  background-color: white;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 640px) {
+  .info {
+    display: block;
+  }
+}
+
+.info div {
+  flex: 1;
+  min-width: 180px;
+  max-width: 640px;
+  height: 100%;
+}
+
+@font-face {
+  font-family: space;
+  src: url("/SpaceGrotesk-Regular.woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: space;
+  src: url("/SpaceGrotesk-Medium.woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: space;
+  src: url("/SpaceGrotesk-Medium.woff2");
+  font-weight: bold;
+}
+
+.rotate {
+  transform: translate(0px, 128px) rotate(-25deg);
+  transform-origin: top left;
+}
+
+.info p:last-child {
+  margin-bottom: 0;
+}
+
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.link:hover {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 1rem;
+}
