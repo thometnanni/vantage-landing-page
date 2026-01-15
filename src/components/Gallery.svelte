@@ -81,12 +81,17 @@
   {:else if images.length > 0}
     <div bind:this={inner} class="flex gap-2 flex-nowrap w-max p-2">
       {#each images as image (image.url)}
-        <img
-          src={image.url}
-          alt={image.title}
-          class="flex-shrink-0 object-contain rounded"
-          style="max-height: 450px;"
-        />
+        <div class="flex flex-col items-start gap-2">
+          <img
+            src={image.url}
+            alt={image.title}
+            class="flex-shrink-0 object-contain rounded"
+            style="max-height: 450px;"
+          />
+          {#if image.title}
+            <p class="text-sm text-gray-400 max-w-[420px]">{image.title}</p>
+          {/if}
+        </div>
       {/each}
     </div>
   {:else}
