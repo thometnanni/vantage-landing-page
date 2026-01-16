@@ -161,7 +161,7 @@
   <div class="info p-2">
     <div>
       <p>
-        <strong>Vantage</strong> is a web-based suite of
+        <strong>Vantage</strong> is a web-based collection of
         <strong
           >spatial reconstruction toolkits for analysing photos and videos</strong
         >, designed for
