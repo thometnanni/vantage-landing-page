@@ -226,7 +226,7 @@
       <p>
         <a class="link" href="mailto:hi@thometnanni.net">Write us</a> for more
         information, or follow our development on
-        <a class="link" href="https://github.com/thometnanni/vantage">GitHub</a
+        <a class="link" href="https://github.com/search?q=topic%3Avantage+org%3Athometnanni&type=Repositories&s=updated&o=desc">GitHub</a
         >.
       </p>
 
