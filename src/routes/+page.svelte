@@ -159,9 +159,10 @@
   <div class="info p-2">
     <div>
       <p>
-        <strong>Vantage</strong> is a web-based software for
-        <strong>spatial reconstruction of photos and videos</strong>, designed
-        for
+        <strong>Vantage</strong> is a web-based suite of
+        <strong
+          >spatial reconstruction toolkits for analysing photos and videos</strong
+        >, designed for
         <strong>investigative journalists and fact-checkers</strong>,
         particularly those working in small teams or independently.
       </p>
@@ -199,7 +200,7 @@
 
       <p>
         Vantage supports this laborious but essential process by bringing all
-        operational phases together in a unified, accessible web interface.
+        operational phases together through accessible web-based interfaces.
       </p>
 
       <p>
@@ -226,7 +227,10 @@
       <p>
         <a class="link" href="mailto:hi@thometnanni.net">Write us</a> for more
         information, or follow our development on
-        <a class="link" href="https://github.com/search?q=topic%3Avantage+org%3Athometnanni&type=Repositories&s=updated&o=desc">GitHub</a
+        <a
+          class="link"
+          href="https://github.com/search?q=topic%3Avantage+org%3Athometnanni&type=Repositories&s=updated&o=desc"
+          >GitHub</a
         >.
       </p>
 
@@ -244,7 +248,10 @@
   {/if}
 
   <div class="info bg-white overflow-x-auto" style="padding: 20px 0;">
-    <div class="flex gap-6 items-center m-auto" style="padding: 0 10px; white-space: nowrap;">
+    <div
+      class="flex gap-6 items-center m-auto"
+      style="padding: 0 10px; white-space: nowrap;"
+    >
       <img
         src="/bmbf.svg"
         alt=""
