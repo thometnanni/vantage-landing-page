@@ -89,7 +89,7 @@
             style="max-height: 450px;"
           />
           {#if image.title}
-            <p class="text-sm text-gray-400 max-w-[420px]">{image.title}</p>
+            <p class="text-sm text-gray-400 max-w-xs">{image.title}</p>
           {/if}
         </div>
       {/each}
