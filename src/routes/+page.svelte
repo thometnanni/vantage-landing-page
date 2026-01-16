@@ -62,6 +62,7 @@
     const svg = document.getElementById("svgContainer");
     const bbox = element.getBBox();
     const matrix = (group || element).getScreenCTM();
+    const svgRect = svg.getBoundingClientRect();
 
     const corners = {
       topLeft: svg.createSVGPoint(),
@@ -84,6 +85,7 @@
         corners[key] = corners[key].matrixTransform(matrix);
       }
       corners[key].y += window.scrollY;
+      corners[key].x -= svgRect.left;
     }
 
     return corners;
@@ -151,7 +153,7 @@
       </g>
 
       <g class="box box-group box">
-        <rect x="30%" y="200" width="65%" height="400" />
+        <rect x="30%" y="200" width="65%" height="460" />
       </g>
     </g>
   </svg>

@@ -8,6 +8,8 @@
     const svg = document.getElementById("svgContainer");
     if (!svg) return;
 
+    const svgRect = svg.getBoundingClientRect();
+
     const smallBox = svg.querySelector(".box-group.rotate rect");
     if (smallBox) {
       const bbox = smallBox.getBBox();
@@ -19,7 +21,7 @@
       const transformed = p.matrixTransform(matrix);
 
       smallTextPos = {
-        x: transformed.x,
+        x: transformed.x - svgRect.left,
         y: transformed.y + window.scrollY,
         width: bbox.width,
         height: bbox.height,
@@ -37,7 +39,7 @@
       const transformed = p.matrixTransform(matrix);
 
       largeBoxPos = {
-        x: transformed.x,
+        x: transformed.x - svgRect.left,
         y: transformed.y + window.scrollY,
         width: bbox.width,
         height: bbox.height,

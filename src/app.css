@@ -22,6 +22,8 @@ body {
   height: 100%;
   text-rendering: geometricprecision;
   overflow-x: hidden;
+  max-width: 1920px;
+  margin: auto;
 }
 
 .introContainer {
@@ -33,10 +35,9 @@ body {
 #svgContainer {
   position: relative;
   width: 100%;
-  height: 620px;
+  height: 680px;
   display: block;
   pointer-events: none;
-
 }
 
 rect {
