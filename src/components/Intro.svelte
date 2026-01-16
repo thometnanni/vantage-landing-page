@@ -70,7 +70,7 @@
     rel="noopener noreferrer"
     class="text-xs pointer-events-auto"
   >
-    Renderer
+    Demo
   </a>
   <a href="mailto:hi@thometnanni.net" class="text-xs pointer-events-auto">
     Contact us
