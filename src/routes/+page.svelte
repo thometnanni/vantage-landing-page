@@ -121,125 +121,128 @@
 </svelte:head>
 
 <div class="introContainer" bind:this={containerEl}>
-  <Intro />
+  <div class="max-w-480 m-auto">
+    <Intro />
 
-  <svg id="svgContainer" xmlns="http://www.w3.org/2000/svg">
-    <g class="box-pair">
-      <g class="box box-group rotate">
-        <rect x="0" y="0" width="300" height="200" />
+    <svg id="svgContainer" xmlns="http://www.w3.org/2000/svg">
+      <g class="box-pair">
+        <g class="box box-group rotate">
+          <rect x="0" y="0" width="300" height="200" />
+        </g>
+
+        <g class="lines">
+          <line
+            class="connector-line"
+            stroke="var(--stroke, lime)"
+            stroke-width="2"
+          />
+          <line
+            class="connector-line"
+            stroke="var(--stroke, lime)"
+            stroke-width="2"
+          />
+          <line
+            class="connector-line"
+            stroke="var(--stroke, lime)"
+            stroke-width="2"
+          />
+          <line
+            class="connector-line"
+            stroke="var(--stroke, lime)"
+            stroke-width="2"
+          />
+        </g>
+
+        <g class="box box-group box">
+          <rect x="30%" y="200" width="65%" height="460" />
+        </g>
       </g>
+    </svg>
+  </div>
+  <div class="max-w-480 m-auto">
+    <div class="info p-2">
+      <div>
+        <p>
+          <strong>Vantage</strong> is a web-based collection of
+          <strong
+            >spatial reconstruction toolkits for analysing photos and videos</strong
+          >, designed for
+          <strong>investigative journalists and fact-checkers</strong>,
+          particularly those working in small teams or independently.
+        </p>
+      </div>
 
-      <g class="lines">
-        <line
-          class="connector-line"
-          stroke="var(--stroke, lime)"
-          stroke-width="2"
-        />
-        <line
-          class="connector-line"
-          stroke="var(--stroke, lime)"
-          stroke-width="2"
-        />
-        <line
-          class="connector-line"
-          stroke="var(--stroke, lime)"
-          stroke-width="2"
-        />
-        <line
-          class="connector-line"
-          stroke="var(--stroke, lime)"
-          stroke-width="2"
-        />
-      </g>
+      <div>
+        <p>
+          Images and videos sourced from social media often represent crucial
+          working material — and, in conflict areas, sometimes the only
+          available source.
+        </p>
 
-      <g class="box box-group box">
-        <rect x="30%" y="200" width="65%" height="460" />
-      </g>
-    </g>
-  </svg>
+        <p>
+          This persuasive visual material demands rigorous verification: do the
+          time and place of the footage correspond to the claimed event? What is
+          actually visible in the images? How do clips from different angles
+          relate to each other?
+        </p>
 
-  <div class="info p-2">
-    <div>
-      <p>
-        <strong>Vantage</strong> is a web-based collection of
-        <strong
-          >spatial reconstruction toolkits for analysing photos and videos</strong
-        >, designed for
-        <strong>investigative journalists and fact-checkers</strong>,
-        particularly those working in small teams or independently.
-      </p>
-    </div>
+        <p>
+          Vantage enables perspectival reconstruction by projecting images and
+          videos onto
+          <strong>3D models of terrain and buildings</strong>, supporting the
+          production of visual evidence.
+        </p>
+      </div>
 
-    <div>
-      <p>
-        Images and videos sourced from social media often represent crucial
-        working material — and, in conflict areas, sometimes the only available
-        source.
-      </p>
+      <div>
+        <p>
+          Until now, creating such reconstructions has been highly demanding,
+          requiring advanced skills in specialist software such as GIS, 3D
+          modeling, and video editing, while offering little opportunity for
+          collaboration.
+        </p>
 
-      <p>
-        This persuasive visual material demands rigorous verification: do the
-        time and place of the footage correspond to the claimed event? What is
-        actually visible in the images? How do clips from different angles
-        relate to each other?
-      </p>
+        <p>
+          Vantage supports this laborious but essential process by bringing all
+          operational phases together through accessible web-based interfaces.
+        </p>
 
-      <p>
-        Vantage enables perspectival reconstruction by projecting images and
-        videos onto
-        <strong>3D models of terrain and buildings</strong>, supporting the
-        production of visual evidence.
-      </p>
-    </div>
+        <p>
+          Reconstructions can be exported as
+          <strong>videos or interactive visualizations</strong>, supporting
+          visual storytelling in investigative journalism.
+        </p>
+      </div>
 
-    <div>
-      <p>
-        Until now, creating such reconstructions has been highly demanding,
-        requiring advanced skills in specialist software such as GIS, 3D
-        modeling, and video editing, while offering little opportunity for
-        collaboration.
-      </p>
+      <div>
+        <p>
+          Funded by
+          <a
+            class="link"
+            href="https://prototypefund.de/project/vantage/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Prototype Fund
+          </a>, <strong>Vantage is open-source and freely accessible</strong>,
+          ensuring that investigative tools are within reach for everyone.
+        </p>
 
-      <p>
-        Vantage supports this laborious but essential process by bringing all
-        operational phases together through accessible web-based interfaces.
-      </p>
+        <p>
+          <a class="link" href="mailto:hi@thometnanni.net">Write us</a> for more
+          information, or follow our development on
+          <a
+            class="link"
+            href="https://github.com/search?q=topic%3Avantage+org%3Athometnanni&type=Repositories&s=updated&o=desc"
+            >GitHub</a
+          >.
+        </p>
 
-      <p>
-        Reconstructions can be exported as
-        <strong>videos or interactive visualizations</strong>, supporting visual
-        storytelling in investigative journalism.
-      </p>
-    </div>
-
-    <div>
-      <p>
-        Funded by
-        <a
-          class="link"
-          href="https://prototypefund.de/project/vantage/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Prototype Fund
-        </a>, <strong>Vantage is open-source and freely accessible</strong>,
-        ensuring that investigative tools are within reach for everyone.
-      </p>
-
-      <p>
-        <a class="link" href="mailto:hi@thometnanni.net">Write us</a> for more
-        information, or follow our development on
-        <a
-          class="link"
-          href="https://github.com/search?q=topic%3Avantage+org%3Athometnanni&type=Repositories&s=updated&o=desc"
-          >GitHub</a
-        >.
-      </p>
-
-      <p>
-        <a class="link" href="https://fidel.computer/">Fidel Thomet</a> &
-        <a class="link" href="https://giacomo.website/">Giacomo Nanni</a>
-      </p>
+        <p>
+          <a class="link" href="https://fidel.computer/">Fidel Thomet</a> &
+          <a class="link" href="https://giacomo.website/">Giacomo Nanni</a>
+        </p>
+      </div>
     </div>
   </div>
 

@@ -9,6 +9,8 @@
     if (!svg) return;
 
     const svgRect = svg.getBoundingClientRect();
+    const svgContainer = svg.closest(".max-w-480");
+    const containerRect = svgContainer ? svgContainer.getBoundingClientRect() : svgRect;
 
     const smallBox = svg.querySelector(".box-group.rotate rect");
     if (smallBox) {
@@ -21,7 +23,7 @@
       const transformed = p.matrixTransform(matrix);
 
       smallTextPos = {
-        x: transformed.x - svgRect.left,
+        x: transformed.x - containerRect.left,
         y: transformed.y + window.scrollY,
         width: bbox.width,
         height: bbox.height,
@@ -39,7 +41,7 @@
       const transformed = p.matrixTransform(matrix);
 
       largeBoxPos = {
-        x: transformed.x - svgRect.left,
+        x: transformed.x - containerRect.left,
         y: transformed.y + window.scrollY,
         width: bbox.width,
         height: bbox.height,
