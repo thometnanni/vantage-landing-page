@@ -10,7 +10,9 @@
 
     const svgRect = svg.getBoundingClientRect();
     const svgContainer = svg.closest(".max-w-480");
-    const containerRect = svgContainer ? svgContainer.getBoundingClientRect() : svgRect;
+    const containerRect = svgContainer
+      ? svgContainer.getBoundingClientRect()
+      : svgRect;
 
     const smallBox = svg.querySelector(".box-group.rotate rect");
     if (smallBox) {
@@ -65,7 +67,7 @@
   });
 </script>
 
-<div class="fixed top-2 right-2 z-4 gap-1 flex flex-col items-end">
+<div class="fixed top-2 z-100 right-2 gap-1 flex flex-col items-end">
   <a
     href="https://thometnanni.github.io/vantage-stories/"
     target="_blank"

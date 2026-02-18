@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import Gallery from "../components/Gallery.svelte";
   import Intro from "../components/Intro.svelte";
+  import Stories from "../components/Stories.svelte";
 
   let containerEl;
   let mounted = false;
@@ -248,6 +249,8 @@
       </div>
     </div>
   </div>
+
+  <Stories />
 
   {#if mounted}
     <div class="relative z-10 bg-white py-4">

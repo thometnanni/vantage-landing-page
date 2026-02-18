@@ -13,7 +13,7 @@
   onMount(async () => {
     try {
       const response = await fetch(
-        "https://api.are.na/v2/channels/vantage-3vctc210p7q"
+        "https://api.are.na/v2/channels/vantage-3vctc210p7q",
       );
       const data = await response.json();
 
@@ -22,7 +22,8 @@
           title: block.title || "",
           url: block.image.display.url,
         }))
-        .reverse();
+        .reverse()
+        .slice(0, 6);
 
       loading = false;
     } catch (err) {
@@ -65,6 +66,8 @@
   }
 </script>
 
+<h2 class="text-xl font-medium m-0 px-2 pt-4 pb-1">Gallery</h2>
+
 <div
   bind:this={outer}
   class="gallery w-full overflow-x-auto scroll-smooth"
@@ -75,8 +78,7 @@
   on:mouseenter={onMouseover}
   on:scroll={onScroll}
 >
-  {#if loading}
-  {:else if error}
+  {#if loading}{:else if error}
     <div class="p-8 text-center text-red-600">Error: {error}</div>
   {:else if images.length > 0}
     <div bind:this={inner} class="flex gap-2 flex-nowrap w-max p-2">
@@ -86,7 +88,7 @@
             src={image.url}
             alt={image.title}
             class="flex-shrink-0 object-contain rounded"
-            style="max-height: 450px;"
+            style="max-height: 350px;"
           />
           {#if image.title}
             <p class="text-sm text-gray-400 max-w-xs">{image.title}</p>
