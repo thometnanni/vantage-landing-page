@@ -67,12 +67,12 @@
 
 <div class="fixed top-2 right-2 z-4 gap-1 flex flex-col items-end">
   <a
-    href="https://thometnanni.github.io/vantage-renderer/"
+    href="https://thometnanni.github.io/vantage-stories/"
     target="_blank"
     rel="noopener noreferrer"
     class="text-xs pointer-events-auto"
   >
-    Demo
+    Demos
   </a>
   <a href="mailto:hi@thometnanni.net" class="text-xs pointer-events-auto">
     Contact us
