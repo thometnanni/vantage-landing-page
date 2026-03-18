@@ -56,7 +56,9 @@
     </a>
   </div>
 
-  <div class="col-span-1 md:col-span-3 space-y-4 text-xl sm:text-2xl mt-6 text-gray-500">
+  <div
+    class="col-span-1 md:col-span-3 space-y-4 text-xl sm:text-2xl mt-6 text-gray-500"
+  >
     <p>
       Vantage is an open-source web-based collection of spatial reconstruction
       toolkits for analyzing photos and videos, designed for investigative
@@ -66,10 +68,9 @@
     <p>
       It enables perspectival reconstruction by projecting images and videos
       onto 3D models of terrain and buildings, supporting the production of
-      visual evidence. Until now, creating such reconstructions has been highly
+      visual evidence, Until now, creating such reconstructions has been highly
       demanding, requiring advanced skills in specialist software such as GIS,
-      3D modeling, and video editing, while offering little opportunity for
-      collaboration.
+      3D modeling and video editing.
     </p>
   </div>
 </section>
