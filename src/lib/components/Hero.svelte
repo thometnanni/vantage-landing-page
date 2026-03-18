@@ -76,7 +76,7 @@
   >
     Demos
   </a>
-  <a href="mailto:hi@thometnanni.net" class="text-xs pointer-events-auto">
+  <a href="mailto:hi@thometnanni.net" class="bg-[var(--highlite)] text-black font-semibold hover:opacity-80 transition pointer-events-auto text-xs">
     Contact us
   </a>
 </div>
