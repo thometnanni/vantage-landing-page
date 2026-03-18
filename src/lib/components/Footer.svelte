@@ -27,8 +27,8 @@
         class="bg-[var(--highlite)] px-2 py-1 text-black hover:opacity-80 text-base"
         target="_blank"
         rel="noopener noreferrer">Prototype Fund</a
-      >, Vantage is open-source and freely accessible, ensuring that
-      investigative tools are within reach for everyone.
+      > Vantage is open-source and freely accessible, ensuring that investigative
+      tools are within reach for everyone.
     </p>
     <p>
       Write us for more information,
