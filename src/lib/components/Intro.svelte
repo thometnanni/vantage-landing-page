@@ -68,7 +68,7 @@
     <p class="indent-10">
       It enables perspectival reconstruction by projecting images and videos
       onto 3D models of terrain and buildings, supporting the production of
-      visual evidence, Until now, creating such reconstructions has been highly
+      visual evidence. Until now, creating such reconstructions has been highly
       demanding, requiring advanced skills in specialist software such as GIS,
       3D modeling and video editing.
     </p>
