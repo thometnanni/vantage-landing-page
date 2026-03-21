@@ -10,6 +10,12 @@
     // { src: "/cover/4.png", type: "image" },
     // { src: "/cover/5.png", type: "image" },
     {
+      src: "/cover/g8.mp4",
+      type: "video",
+      caption:
+        "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
+    },
+    {
       src: "/cover/vajont.mp4",
       type: "video",
       caption: "Vajont dam in 1960 – Wikimedia, OpenStreetMap",
@@ -18,12 +24,6 @@
       src: "/cover/silber.mp4",
       type: "video",
       caption: "Petra Gall, Silbersteinstraße Graffitis 1983 – OpenStreetMap",
-    },
-    {
-      src: "/cover/g8.mp4",
-      type: "video",
-      caption:
-        "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
     },
   ];
 
@@ -56,9 +56,10 @@
       <img
         src={item.src}
         alt="Slide {index + 1}"
-        class="absolute w-full h-full object-cover transition-[opacity,transform] duration-[1200ms] ease-in-out {index === currentIndex
-          ? 'opacity-100 scale-100'
-          : 'opacity-0 scale-[1.04]'}"
+        class="absolute w-full h-full object-cover transition-opacity duration-[1200ms] ease-in-out {index ===
+        currentIndex
+          ? 'opacity-100'
+          : 'opacity-0'}"
       />
     {:else if item.type === "video"}
       <video
@@ -67,9 +68,10 @@
         muted
         playsinline
         on:ended={goToNext}
-        class="absolute w-full h-full object-cover transition-[opacity,transform] duration-[1200ms] ease-in-out {index === currentIndex
-          ? 'opacity-100 scale-100'
-          : 'opacity-0 scale-[1.04]'}"
+        class="absolute w-full h-full object-cover transition-opacity duration-[1200ms] ease-in-out {index ===
+        currentIndex
+          ? 'opacity-100'
+          : 'opacity-0'}"
       />
     {/if}
   {/each}
