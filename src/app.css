@@ -12,14 +12,13 @@ body {
 
   width: 100%;
   height: 100%;
-  text-rendering: geometricprecision;
+  text-rendering: geometricPrecision;
   overflow-x: hidden;
   margin: auto;
 }
 
 ::selection {
-  background: var(--highlite);
-  color: black;
+  @apply text-gray-300 bg-black;
 }
 
 @font-face {

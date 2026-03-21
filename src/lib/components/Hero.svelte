@@ -76,7 +76,7 @@
   >
     Demos
   </a>
-  <a href="mailto:hi@thometnanni.net" class="bg-[var(--highlite)] text-black font-semibold hover:opacity-80 transition pointer-events-auto text-xs">
+  <a href="mailto:hi@thometnanni.net" class="bg-[var(--highlite)] text-black font-semibold hover:opacity-80 transition pointer-events-auto leading-none text-xs">
     Contact us
   </a>
 </div>
@@ -94,7 +94,7 @@
     `}
   >
     <p
-      class="text-base leading-tight text-left text-black m-0 p-3 overflow-hidden"
+      class="text-base leading-none text-left text-black m-0 p-3 leading-none overflow-hidden"
     >
       Vantage reconstructs the spatial context of video recordings.
     </p>

@@ -1,4 +1,4 @@
-<section class="bg-white p-8">
+<section class="bg-white p-8 border-t">
   <div class="flex gap-2 items-left max-w-2xl">
     <img
       src="/bmbf.svg"
@@ -20,25 +20,33 @@
     />
   </div>
 
-  <div class="max-w-2xl pt-10 text-base sm:text-xl text-gray-500">
+  <div class="max-w-2xl pt-10 leading-tight text-base text-gray-400">
     <p class="mb-2">
-      Initially funded by <a
+      Initially funded by <a
         href="https://prototypefund.de/project/vantage/"
-        class="bg-[var(--highlite)] px-2 py-1 text-black hover:opacity-80 text-base"
+        class="bg-gray-200 hover:bg-[var(--highlite)] px-2 text-black text-base"
         target="_blank"
         rel="noopener noreferrer">Prototype Fund</a
       > Vantage is open-source and freely accessible, ensuring that investigative
       tools are within reach for everyone.
     </p>
     <p>
-      Write us for more information,
-
+      <a
+        href="mailto:hi@thometnanni.net"
+        class="bg-gray-200 hover:bg-[var(--highlite)] px-2 sm:mt-5 inline-block text-black transition pointer-events-auto text-base"
+      >
+        Write us
+      </a>
+      for more information,
+    </p>
+    <p class="mt-1">
       <a
         href="https://krisenstab.net"
-        class="bg-[var(--highlite)] px-2 py-1 text-black hover:opacity-80 text-base"
+        class="bg-gray-200 hover:bg-[var(--highlite)] px-2 text-black text-base leading-tight"
         target="_blank"
-        rel="noopener noreferrer">Fidel Thomet & Giacomo Nanni</a
-      >
+        rel="noopener noreferrer"
+        >Fidel & Giacomo
+      </a>
     </p>
   </div>
 </section>

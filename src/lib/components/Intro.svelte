@@ -1,8 +1,8 @@
 <section
-  class="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-6xl m-auto mt-4 mb-20 p-4"
+  class="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-6xl m-auto mb-20 p-4"
 >
   <div class="col-span-1 md:col-span-3">
-    <h1 class="text-2xl sm:text-4xl mb-4">
+    <h1 class="text-2xl leading-none sm:text-4xl mb-4">
       Vantage
 
       <svg
@@ -57,17 +57,17 @@
   </div>
 
   <div
-    class="col-span-1 md:col-span-3 space-y-4 text-xl sm:text-2xl mt-6 text-gray-500"
+    class="col-span-1 md:col-span-3 leading-tight text-xl sm:text-2xl mt-6 text-gray-500"
   >
     <p>
-      Vantage is an open-source web-based collection of spatial reconstruction
-      toolkits for analyzing photos and videos, designed for investigative
+      Vantage is an open-source web-based collection of spatial reconstruction
+      toolkits for analyzing photos and videos, designed for investigative
       journalists and fact-checkers, particularly those working in small teams
       or independently.
     </p>
-    <p>
+    <p class="indent-10">
       It enables perspectival reconstruction by projecting images and videos
-      onto 3D models of terrain and buildings, supporting the production of
+      onto 3D models of terrain and buildings, supporting the production of
       visual evidence, Until now, creating such reconstructions has been highly
       demanding, requiring advanced skills in specialist software such as GIS,
       3D modeling and video editing.

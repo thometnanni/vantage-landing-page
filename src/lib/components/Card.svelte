@@ -1,34 +1,42 @@
 <script>
   export let image;
-  export let text;
+  export let title = "";
+  export let description = "";
   export let span = 1;
-  export let href = "#";
+  export let links = [];
 </script>
 
-{#if span === 2}
-  <a
-    {href} 
-    target="_blank"
-    class="md:col-span-2 bg-white border border-black flex overflow-hidden h-120 no-underline hover:opacity-70 transition"
-  >
-    <div class="w-3/5 p-2">
-      <img src={image} alt="" class="w-full h-full object-cover" />
+<div
+  class="bg-white border border-[var()] flex flex-col h-120 no-underline {span ===
+  2
+    ? 'md:col-span-2'
+    : 'md:col-span-1'}"
+>
+  <div class="h-3/4 p-2">
+    <img src={image} alt="" class="w-full h-full object-cover" />
+  </div>
+  <div class="h-1/4 p-2 flex flex-col justify-between">
+    <div>
+      {#if title}
+        <h2 class="text-base">{title}</h2>
+      {/if}
+      {#if description}
+        <p class="text-base leading-none text-gray-400 mt-1">{description}</p>
+      {/if}
     </div>
-    <div class="w-2/5 p-2 flex items-start">
-      <p class="text-2xl">{text}</p>
-    </div>
-  </a>
-{:else}
-  <a
-    {href}
-    target="_blank"
-    class="md:col-span-1 bg-white border border-black flex flex-col h-120 no-underline hover:opacity-70 transition"
-  >
-    <div class="h-3/4 p-2">
-      <img src={image} alt="" class="w-full h-full object-cover" />
-    </div>
-    <div class="h-1/4 p-2">
-      <p class="text-xl">{text}</p>
-    </div>
-  </a>
-{/if}
+    {#if links.length > 0}
+      <div class="flex gap-2">
+        {#each links as link}
+          <a
+            href={link.href}
+            target="_blank"
+            class="inline-flex items-center gap-1 px-2 py-1 bg-gray-200 hover:bg-[var(--highlite)] text-black text-sm"
+          >
+            <span>↗</span>
+            {link.text}
+          </a>
+        {/each}
+      </div>
+    {/if}
+  </div>
+</div>
