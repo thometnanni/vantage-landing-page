@@ -10,17 +10,17 @@
     // { src: "/cover/4.png", type: "image" },
     // { src: "/cover/5.png", type: "image" },
     {
-      src: "/cover/vajont.mov",
+      src: "/cover/vajont.mp4",
       type: "video",
       caption: "Vajont dam in 1960 – Wikimedia, OpenStreetMap",
     },
     {
-      src: "/cover/silber.mov",
+      src: "/cover/silber.mp4",
       type: "video",
       caption: "Petra Gall, Silbersteinstraße Graffitis 1983 – OpenStreetMap",
     },
     {
-      src: "/cover/g8.mov",
+      src: "/cover/g8.mp4",
       type: "video",
       caption:
         "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
