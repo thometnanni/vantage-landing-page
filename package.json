@@ -7,7 +7,7 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d build --dotfiles --cname vantage.thometnanni.net"
+    "deploy": "gh-pages -d build --dotfiles --cname vantage.krisenstab.net"
   },
   "author": "",
   "license": "ISC",
