@@ -56,8 +56,7 @@
       <img
         src={item.src}
         alt="Slide {index + 1}"
-        class="absolute w-full h-full object-cover transition-opacity duration-[1200ms] ease-in-out {index ===
-        currentIndex
+        class="absolute w-full h-full object-cover {index === currentIndex
           ? 'opacity-100'
           : 'opacity-0'}"
       />
@@ -68,7 +67,7 @@
         muted
         playsinline
         on:ended={goToNext}
-        class="absolute w-full h-full object-cover transition-opacity duration-[1200ms] ease-in-out {index ===
+        class="absolute w-full h-full object-cover {index ===
         currentIndex
           ? 'opacity-100'
           : 'opacity-0'}"
