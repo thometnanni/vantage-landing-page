@@ -7,8 +7,7 @@
 </script>
 
 <div
-  class="bg-white border border-[var()] flex flex-col h-120 no-underline {span ===
-  2
+  class="bg-white border flex flex-col h-120 no-underline {span === 2
     ? 'md:col-span-2'
     : 'md:col-span-1'}"
 >
@@ -30,7 +29,7 @@
           <a
             href={link.href}
             target="_blank"
-            class="inline-flex items-center gap-1 px-2 py-1 bg-gray-200 hover:bg-[var(--highlite)] text-black text-sm"
+            class="inline-flex items-center gap-1 px-2 py-1 bg-gray-200 hover:bg-(--highlite) text-black text-sm"
           >
             <span>↗</span>
             {link.text}
