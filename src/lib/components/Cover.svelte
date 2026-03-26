@@ -67,11 +67,10 @@
         muted
         playsinline
         on:ended={goToNext}
-        class="absolute w-full h-full object-cover {index ===
-        currentIndex
+        class="absolute w-full h-full object-cover {index === currentIndex
           ? 'opacity-100'
           : 'opacity-0'}"
-      />
+      ></video>
     {/if}
   {/each}
 
