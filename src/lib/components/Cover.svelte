@@ -50,7 +50,7 @@
   });
 </script>
 
-<div class="relative w-full h-[70vh] border-b overflow-hidden bg-black">
+<div class="relative w-full h-[70vh] overflow-hidden bg-black">
   {#each media as item, index}
     {#if item.type === "image"}
       <img
@@ -67,11 +67,10 @@
         muted
         playsinline
         on:ended={goToNext}
-        class="absolute w-full h-full object-cover {index ===
-        currentIndex
+        class="absolute w-full h-full object-cover {index === currentIndex
           ? 'opacity-100'
           : 'opacity-0'}"
-      />
+      ></video>
     {/if}
   {/each}
 

@@ -6,18 +6,25 @@
       span: 2,
       image: "/cards/vantage.png",
       title: "Vantage",
-      description: "Create and edit scenes with the editor",
+      description:
+        "Spatially reconstruct events by placing and projecting imagery onto 3d models",
       links: [
         { text: "Try it", href: "https://v-a-n-t-a-g-e.github.io/vantage/" },
         { text: "View code", href: "https://github.com/v-a-n-t-a-g-e/vantage" },
       ],
     },
-     {
+    {
       span: 1,
       image: "/cards/territory.png",
       title: "Territory",
-      description: "Generate 3D city models, with elevation, textures and customisations",
-      links: [{ text: "Get started", href: "https://v-a-n-t-a-g-e.github.io/territory/" }],
+      description:
+        "Generate 3D city models, with elevation, textures and customisations",
+      links: [
+        {
+          text: "Get started",
+          href: "https://v-a-n-t-a-g-e.github.io/territory/",
+        },
+      ],
     },
     // {
     //   span: 1,
@@ -33,7 +40,7 @@
     //   description: "Add cameras and text annotations",
     //   links: [{ text: "Explore", href: "https://example.com/" }],
     // },
-   
+
     //  {
     //   span: 1,
     //   image: "/cards/default.png",
@@ -45,7 +52,7 @@
 </script>
 
 <section
-  class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4 max-w-6xl m-auto my-8"
+  class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 px-4 md:px-8 max-w-6xl m-auto my-8"
 >
   {#each cards as card}
     <Card

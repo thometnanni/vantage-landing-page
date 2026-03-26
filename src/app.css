@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
-html {
-  --highlite: lime;
-  --pink: #f4eaff;
+@theme {
+  --color-link: #ebddf4;
+  --color-highlite: lime;
+  --color-pink: #f4eaff;
+}
+
+@utility link {
+  @apply bg-link hover:bg-highlite px-1 text-black;
 }
 
 body {
-  background-color: var(--pink);
+  @apply bg-pink;
   font-family: space, Inter, sans-serif;
   font-feature-settings: "liga", "ss03", "ss02";
 

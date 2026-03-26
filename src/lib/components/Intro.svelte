@@ -1,9 +1,9 @@
 <section
-  class="grid grid-cols-1 md:grid-cols-6 gap-8 max-w-6xl m-auto mb-20 p-4"
+  class="grid grid-cols-1 md:grid-cols-5 gap-2 sm:gap-8 max-w-6xl m-auto p-4 md:px-8 pt-10"
 >
-  <div class="col-span-1 md:col-span-3">
+  <div class="col-span-1 md:col-span-2">
     <h1 class="text-2xl leading-none sm:text-4xl mb-4">
-      Vantage
+      We
 
       <svg
         width="75"
@@ -46,13 +46,13 @@
         />
       </svg>
 
-      explores innovative web-based approaches in service of journalism.
+      design open source tools and workflows for spatial journalism.
     </h1>
     <a
       href="mailto:hi@thometnanni.net"
-      class="bg-[var(--highlite)] px-2 py-1 sm:mt-5 inline-block text-black hover:opacity-80 transition pointer-events-auto text-base"
+      class="bg-highlite px-2 py-1 sm:mt-5 inline-block text-black hover:bg-black hover:text-highlite pointer-events-auto text-base"
     >
-      Write us
+      Contact us
     </a>
   </div>
 
@@ -60,20 +60,18 @@
     class="col-span-1 md:col-span-3 leading-tight text-xl sm:text-2xl mt-6 text-gray-500"
   >
     <p>
-      Vantage is an open-source web-based collection of spatial reconstruction
-      toolkits for analyzing photos and videos, designed for investigative
-      journalists and fact-checkers, particularly those working in small teams
-      or independently.
+      Vantage is a toolkit for photo- and video-based spatial reconstruction
+      designed for investigative journalists and fact-checkers by
+      <a class="link" href="https://krisenstab.net/"> krisenstab.</a>
     </p>
     <p class="indent-10">
-      It enables perspectival reconstruction by projecting images and videos
-      onto 3D models of terrain and buildings, supporting the production of
-      visual evidence.
+      We provide open source tools and guides for spatial journalism. Our web
+      apps are free to use, run entirely in your browser and keep your data on
+      your device.
     </p>
     <p class="indent-10">
-      Until now, creating such reconstructions has been highly demanding,
-      requiring advanced skills in specialist software such as GIS, 3D modeling
-      and video editing.
+      Initial development was funded by the German Federal Ministry of Education
+      and Research and the Prototype Fund.
     </p>
   </div>
 </section>
