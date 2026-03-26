@@ -52,7 +52,7 @@
 </script>
 
 <section
-  class="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 max-w-6xl m-auto my-8"
+  class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 px-4 md:px-8 max-w-6xl m-auto my-8"
 >
   {#each cards as card}
     <Card

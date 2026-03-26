@@ -1,5 +1,5 @@
 <section
-  class="grid grid-cols-1 md:grid-cols-5 gap-2 sm:gap-8 max-w-6xl m-auto p-4 pt-10"
+  class="grid grid-cols-1 md:grid-cols-5 gap-2 sm:gap-8 max-w-6xl m-auto p-4 md:px-8 pt-10"
 >
   <div class="col-span-1 md:col-span-2">
     <h1 class="text-2xl leading-none sm:text-4xl mb-4">

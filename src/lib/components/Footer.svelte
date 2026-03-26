@@ -8,7 +8,7 @@
 </script>
 
 <section class="bg-white p-2 sm:p-8 border-t flex justify-center">
-  <div class="max-w-6xl w-full px-4">
+  <div class="max-w-6xl w-full px-4 md:px-8">
     <!-- <p class="mb-4">Vantage is created by krisenstab / Thomet & Nanni GbR</p> -->
     <div class="flex gap-2 sm:gap-8 items-left max-w-2xl">
       <img
