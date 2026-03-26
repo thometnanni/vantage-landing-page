@@ -1,52 +1,49 @@
-<section class="bg-white p-8 border-t">
-  <div class="flex gap-2 items-left max-w-2xl">
-    <img
-      src="/bmbf.svg"
-      alt=""
-      class="object-contain"
-      style="max-width: 30%; height: 100px;"
-    />
-    <img
-      src="/pf.svg"
-      alt=""
-      class="object-contain"
-      style="max-width: 30%; height: 100px;"
-    />
-    <img
-      src="/openc.svg"
-      alt=""
-      class="object-contain"
-      style="max-width: 30%; height: 100px;"
-    />
-  </div>
+<script>
+  const contact = {
+    street: "RW1zZXIgU3RyLiA2OA==",
+    town: "MTIwNTEgYmVybGlu",
+    mail: "aGlAdGhvbWV0bmFubmkubmV0",
+    vat: "REU0MDU4MDU0Njg=",
+  };
+</script>
 
-  <div class="max-w-2xl pt-10 leading-tight text-base text-gray-400">
-    <p class="mb-2">
-      Initially funded by <a
-        href="https://prototypefund.de/project/vantage/"
-        class="bg-gray-200 hover:bg-[var(--highlite)] px-2 text-black text-base"
-        target="_blank"
-        rel="noopener noreferrer">Prototype Fund</a
-      > Vantage is open-source and freely accessible, ensuring that investigative
-      tools are within reach for everyone.
-    </p>
-    <p>
-      <a
-        href="mailto:hi@thometnanni.net"
-        class="bg-gray-200 hover:bg-[var(--highlite)] px-2 sm:mt-5 inline-block text-black transition pointer-events-auto text-base"
-      >
-        Write us
-      </a>
-      for more information,
-    </p>
-    <p class="mt-1">
-      <a
-        href="https://krisenstab.net"
-        class="bg-gray-200 hover:bg-[var(--highlite)] px-2 text-black text-base leading-tight"
-        target="_blank"
-        rel="noopener noreferrer"
-        >Fidel & Giacomo
-      </a>
-    </p>
+<section class="bg-white p-8 border-t flex justify-center">
+  <div class="max-w-6xl w-full px-4">
+    <div class="flex gap-8 items-left max-w-2xl">
+      <img
+        src="/bmbf.svg"
+        alt=""
+        class="object-contain"
+        style="max-width: 30%; height: 100px;"
+      />
+      <img
+        src="/pf.svg"
+        alt=""
+        class="object-contain"
+        style="max-width: 30%; height: 100px;"
+      />
+      <img
+        src="/openc.svg"
+        alt=""
+        class="object-contain"
+        style="max-width: 30%; height: 100px;"
+      />
+    </div>
+
+    <div class="max-w-2xl pt-10 leading-tight text-gray-400">
+      <p class="mb-4">Vantage is created by krisenstab / Thomet & Nanni GbR</p>
+
+      <p>
+        <span class="text-black">Imprint</span><br />
+        Krisenstab<br />
+        Thomet & Nanni GbR<br />
+        {atob(contact.street)}<br />
+        {atob(contact.town)}<br />
+        <br />
+
+        {atob(contact.mail)}<br />
+        {atob(contact.vat)}
+      </p>
+    </div>
   </div>
 </section>
