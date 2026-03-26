@@ -7,9 +7,10 @@
   };
 </script>
 
-<section class="bg-white p-8 border-t flex justify-center">
+<section class="bg-white p-2 sm:p-8 border-t flex justify-center">
   <div class="max-w-6xl w-full px-4">
-    <div class="flex gap-8 items-left max-w-2xl">
+    <!-- <p class="mb-4">Vantage is created by krisenstab / Thomet & Nanni GbR</p> -->
+    <div class="flex gap-2 sm:gap-8 items-left max-w-2xl">
       <img
         src="/bmbf.svg"
         alt=""
@@ -30,20 +31,20 @@
       />
     </div>
 
-    <div class="max-w-2xl pt-10 leading-tight text-gray-400">
-      <p class="mb-4">Vantage is created by krisenstab / Thomet & Nanni GbR</p>
-
-      <p>
-        <span class="text-black">Imprint</span><br />
-        Krisenstab<br />
-        Thomet & Nanni GbR<br />
-        {atob(contact.street)}<br />
-        {atob(contact.town)}<br />
-        <br />
-
-        {atob(contact.mail)}<br />
-        {atob(contact.vat)}
-      </p>
+    <div class="max-w-2x pt-2 sm:pt-10 leading-tight text-gray-400">
+      <p class="text-black mb-2">Imprint</p>
+      <div class="flex gap-8">
+        <p>
+          Krisenstab<br />
+          Thomet & Nanni GbR<br />
+          {atob(contact.street)}<br />
+          {atob(contact.town)}<br />
+        </p>
+        <p>
+          {atob(contact.mail)}<br />
+          {atob(contact.vat)}
+        </p>
+      </div>
     </div>
   </div>
 </section>
