@@ -29,7 +29,7 @@
           <a
             href={link.href}
             target="_blank"
-            class="inline-flex items-center gap-1 px-2 py-1 bg-gray-200 hover:bg-(--highlite) text-black text-sm"
+            class="inline-flex items-center gap-1 px-2 py-1 link text-sm"
           >
             <span>↗</span>
             {link.text}

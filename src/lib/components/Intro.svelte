@@ -50,7 +50,7 @@
     </h1>
     <a
       href="mailto:hi@thometnanni.net"
-      class="bg-(--highlite) px-2 py-1 sm:mt-5 inline-block text-black hover:opacity-80 transition pointer-events-auto text-base"
+      class="bg-highlite px-2 py-1 sm:mt-5 inline-block text-black hover:bg-black hover:text-highlite pointer-events-auto text-base"
     >
       Write us
     </a>
