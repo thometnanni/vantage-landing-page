@@ -5,16 +5,36 @@
   let videoEls = [];
 
   const media = [
-    // { src: "/cover/7.png", type: "image" },
-    // { src: "/cover/3.png", type: "image" },
-    // { src: "/cover/4.png", type: "image" },
-    // { src: "/cover/5.png", type: "image" },
     {
-      src: "/cover/g8.mp4",
-      type: "video",
+      src: "/cover/vajont.png",
+      type: "image",
+      caption: "Vajont incident, 1960 – Wikimedia, OpenStreetMap",
+    },
+    {
+      src: "/cover/g8_1.png",
+      type: "image",
       caption:
         "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
     },
+    {
+      src: "/cover/g8_2.png",
+      type: "image",
+      caption:
+        "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
+    },
+    {
+      src: "/cover/g8_3.png",
+      type: "image",
+      caption:
+        "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
+    },
+
+    // {
+    //   src: "/cover/g8.mp4",
+    //   type: "video",
+    //   caption:
+    //     "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
+    // },
     {
       src: "/cover/vajont.mp4",
       type: "video",
