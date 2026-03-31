@@ -50,7 +50,7 @@
     </h1>
     <a
       href="mailto:hi@thometnanni.net"
-      class="bg-highlite px-2 py-1 sm:mt-5 inline-block text-black hover:bg-black hover:text-highlite pointer-events-auto text-base"
+      class="link px-2 py-1 sm:mt-5 inline-block pointer-events-auto text-base"
     >
       Contact us
     </a>
@@ -62,7 +62,7 @@
     <p>
       Vantage is a toolkit for photo- and video-based spatial reconstruction
       designed for investigative journalists and fact-checkers by
-      <a class="link" href="https://krisenstab.net/"> krisenstab.</a>
+      <a class="link-secondary" href="https://krisenstab.net/"> krisenstab.</a>
     </p>
     <p class="indent-10">
       We provide open source tools and guides for spatial journalism. Our web
