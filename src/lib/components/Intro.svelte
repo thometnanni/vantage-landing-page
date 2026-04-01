@@ -1,3 +1,7 @@
+<script>
+  import { contact } from "../contact.js";
+</script>
+
 <section
   class="grid grid-cols-1 md:grid-cols-5 gap-2 sm:gap-8 max-w-6xl m-auto p-4 md:px-8 pt-10"
 >
@@ -49,7 +53,7 @@
       design open source tools and workflows for spatial journalism.
     </h1>
     <a
-      href="mailto:hi@thometnanni.net"
+      href="mailto:{atob(contact.mail)}"
       class="link px-2 py-1 sm:mt-5 inline-block pointer-events-auto text-base"
     >
       Contact us

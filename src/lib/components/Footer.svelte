@@ -1,10 +1,5 @@
 <script>
-  const contact = {
-    street: "RW1zZXIgU3RyLiA2OA==",
-    town: "MTIwNTEgYmVybGlu",
-    mail: "aGlAdGhvbWV0bmFubmkubmV0",
-    vat: "REU0MDU4MDU0Njg=",
-  };
+  import { contact } from "../contact.js";
 </script>
 
 <section class="bg-white p-2 sm:p-8 border-t flex justify-center">
