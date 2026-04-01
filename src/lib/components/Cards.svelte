@@ -10,7 +10,11 @@
         "Spatially reconstruct events by placing and projecting imagery onto 3d models",
       links: [
         { text: "Try it", href: "https://v-a-n-t-a-g-e.github.io/vantage/" },
-        { text: "View code", href: "https://github.com/v-a-n-t-a-g-e/vantage" },
+        { text: "Github", href: "https://github.com/v-a-n-t-a-g-e/vantage" },
+        {
+          text: "npm package",
+          href: "https://www.npmjs.com/package/@krisenstab/vantage",
+        },
       ],
     },
     {
@@ -26,13 +30,19 @@
         },
       ],
     },
-    // {
-    //   span: 1,
-    //   image: "/cards/default.png",
-    //   title: "Getting Started",
-    //   description: "Set up Vantage with our guide",
-    //   links: [{ text: "Learn more", href: "https://example.com/" }],
-    // },
+    {
+      span: 1,
+      image: "/cards/guide-1.webp",
+      title: "Performing a Spatial Reconstruction in Vantage",
+      description:
+        "A getting started guide for creating 3d models in Territory and aligning imagery in Vantage",
+      links: [
+        {
+          text: "Read",
+          href: "https://open.substack.com/pub/krisenstab/p/performing-a-spatial-reconstruction",
+        },
+      ],
+    },
     // {
     //   span: 1,
     //   image: "/cards/default.png",
