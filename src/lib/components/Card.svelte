@@ -31,11 +31,13 @@
       </div>
       {#if links.length > 0}
         <div class="flex gap-2">
-          {#each links as link}
+          {#each links as link, i}
             <a
               href={link.href}
               target="_blank"
-              class="inline-flex items-center gap-1 px-2 py-1 link text-sm"
+              class="inline-flex items-center gap-1 px-2 py-1 text-sm"
+              class:link={i === 0}
+              class:link-secondary={i > 0}
             >
               <span>↗</span>
               {link.text}

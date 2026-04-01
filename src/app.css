@@ -7,7 +7,11 @@
 }
 
 @utility link {
-  @apply bg-link hover:bg-highlite px-1 text-black;
+  @apply bg-highlite hover:bg-black px-1 text-black hover:text-highlite;
+}
+
+@utility link-secondary {
+  @apply bg-link hover:bg-black px-1 text-black hover:text-highlite;
 }
 
 body {
