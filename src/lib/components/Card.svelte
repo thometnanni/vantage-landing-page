@@ -21,10 +21,12 @@
     <div class="min-h-1/4 bg-white pt-2 gap-4 flex flex-col justify-between">
       <div>
         {#if title}
-          <h2 class="text-base">{title}</h2>
+          <h2 class="text-base leading-tight">{title}</h2>
         {/if}
         {#if description}
-          <p class="text-base leading-none text-gray-400 mt-1">{description}</p>
+          <p class="text-base leading-tight text-gray-400 mt-2">
+            {description}
+          </p>
         {/if}
       </div>
       {#if links.length > 0}
