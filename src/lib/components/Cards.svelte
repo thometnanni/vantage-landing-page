@@ -28,6 +28,7 @@
           text: "Get started",
           href: "https://v-a-n-t-a-g-e.github.io/territory/",
         },
+        { text: "Github", href: "https://github.com/v-a-n-t-a-g-e/territory" },
       ],
     },
     {
@@ -41,6 +42,20 @@
           text: "Read",
           href: "https://open.substack.com/pub/krisenstab/p/performing-a-spatial-reconstruction",
         },
+      ],
+    },
+    {
+      span: 1,
+      image: "/cards/storyboard.png",
+      title: "Storyboard",
+      description:
+        "Turn Vantage scenes and 3D models into interactive web publications.",
+      links: [
+        {
+          text: "Get started",
+          href: "https://v-a-n-t-a-g-e.github.io/storyboard/",
+        },
+        { text: "Github", href: "https://github.com/v-a-n-t-a-g-e/storyboard" },
       ],
     },
     // {
