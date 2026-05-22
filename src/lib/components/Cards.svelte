@@ -58,21 +58,19 @@
         { text: "Github", href: "https://github.com/v-a-n-t-a-g-e/storyboard" },
       ],
     },
-    // {
-    //   span: 1,
-    //   image: "/cards/default.png",
-    //   title: "Try it",
-    //   description: "Add cameras and text annotations",
-    //   links: [{ text: "Explore", href: "https://example.com/" }],
-    // },
-
-    //  {
-    //   span: 1,
-    //   image: "/cards/default.png",
-    //   title: "Developer Resources",
-    //   description: "Build with the Vantage Core code",
-    //   links: [{ text: "Get started", href: "https://example.com/" }],
-    // },
+    {
+      span: 1,
+      image: "/cards/guide-2.png",
+      title: "From Research to Presentation",
+      description:
+        "A guide to creating slideshows and scrollytellings from Vantage investigations.",
+      links: [
+        {
+          text: "Read",
+          href: "https://krisenstab.substack.com/p/from-research-to-presentation",
+        },
+      ],
+    },
   ];
 </script>
 
