@@ -29,9 +29,10 @@
         caption: b.title === "image" ? "" : (b.title ?? ""),
       }));
 
+    currentIndex = Math.floor(Math.random() * media.length);
     preloadNext();
 
-    const interval = setInterval(goToNext, 5000);
+    const interval = setInterval(goToNext, 3000);
     return () => clearInterval(interval);
   });
 </script>
