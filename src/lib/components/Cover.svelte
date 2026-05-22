@@ -1,97 +1,51 @@
 <script>
   import { onMount } from "svelte";
 
+  let media = [];
   let currentIndex = 0;
-  let videoEls = [];
 
-  const media = [
-    {
-      src: "/cover/vajont.png",
-      type: "image",
-      caption: "Vajont incident, 1960 – Wikimedia, OpenStreetMap",
-    },
-    {
-      src: "/cover/g8_1.png",
-      type: "image",
-      caption:
-        "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
-    },
-    {
-      src: "/cover/g8_2.png",
-      type: "image",
-      caption:
-        "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
-    },
-    {
-      src: "/cover/g8_3.png",
-      type: "image",
-      caption:
-        "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
-    },
-
-    // {
-    //   src: "/cover/g8.mp4",
-    //   type: "video",
-    //   caption:
-    //     "Violent Clashes at the 2001 Genoa G8 Summit – Wikipedia, OpenStreetMap",
-    // },
-    {
-      src: "/cover/vajont.mp4",
-      type: "video",
-      caption: "Vajont dam in 1960 – Wikimedia, OpenStreetMap",
-    },
-    {
-      src: "/cover/silber.mp4",
-      type: "video",
-      caption: "Petra Gall, Silbersteinstraße Graffitis 1983 – OpenStreetMap",
-    },
-  ];
-
-  function goToNext() {
-    currentIndex = (currentIndex + 1) % media.length;
-    const video = videoEls[currentIndex];
-    if (video) {
-      video.currentTime = 0;
-      video.play();
+  function preloadNext() {
+    const nextIndex = (currentIndex + 1) % media.length;
+    if (media[nextIndex]) {
+      const img = new Image();
+      img.src = media[nextIndex].src;
     }
   }
 
-  onMount(() => {
-    // Start the first video
-    if (videoEls[0]) videoEls[0].play();
+  function goToNext() {
+    currentIndex = (currentIndex + 1) % media.length;
+    preloadNext();
+  }
 
-    const interval = setInterval(() => {
-      if (media[currentIndex].type === "image") {
-        goToNext();
-      }
-    }, 5000);
+  onMount(async () => {
+    const res = await fetch(
+      "https://api.are.na/v2/channels/vantage-3vctc210p7q/contents?per=100",
+    );
+    const data = await res.json();
+    media = data.contents
+      .filter((b) => b.class === "Image")
+      .map((b) => ({
+        src: b.image.large.url,
+        caption: b.title === "image" ? "" : (b.title ?? ""),
+      }));
 
+    preloadNext();
+
+    const interval = setInterval(goToNext, 5000);
     return () => clearInterval(interval);
   });
 </script>
 
 <div class="relative w-full h-[70vh] overflow-hidden bg-black">
   {#each media as item, index}
-    {#if item.type === "image"}
-      <img
-        src={item.src}
-        alt="Slide {index + 1}"
-        class="absolute w-full h-full object-cover {index === currentIndex
-          ? 'opacity-100'
-          : 'opacity-0'}"
-      />
-    {:else if item.type === "video"}
-      <video
-        bind:this={videoEls[index]}
-        src={item.src}
-        muted
-        playsinline
-        on:ended={goToNext}
-        class="absolute w-full h-full object-cover {index === currentIndex
-          ? 'opacity-100'
-          : 'opacity-0'}"
-      ></video>
-    {/if}
+    <img
+      src={item.src}
+      alt="Slide {index + 1}"
+      class="absolute w-full h-full object-cover transition-opacity duration-700 {index ===
+      currentIndex
+        ? 'opacity-100'
+        : 'opacity-0'}"
+    />
   {/each}
 
   {#if media[currentIndex]?.caption}
