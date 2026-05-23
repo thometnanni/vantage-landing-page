@@ -20,8 +20,7 @@
   let pendingNextIndex = -1;
   let rafId;
 
-  const TRANSITION_MS = 3000;
-  const SLIDE_MS = 3000;
+  const TRANSITION_MS = 5000;
 
   function initGL() {
     gl = canvas.getContext('webgl');
@@ -61,11 +60,12 @@
     return true;
   }
 
-  function makeTexture(img) {
+  function makeTexture(img, repeat = false) {
     const tex = gl.createTexture();
     gl.bindTexture(gl.TEXTURE_2D, tex);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+    const wrap = repeat ? gl.REPEAT : gl.CLAMP_TO_EDGE;
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, wrap);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, wrap);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
@@ -109,6 +109,7 @@
         currentIndex = pendingNextIndex;
         caption = media[currentIndex]?.caption ?? '';
         t = 1.0;
+        startTransition((currentIndex + 1) % media.length);
       }
     }
 
@@ -166,23 +167,16 @@
       loadImg(media[currentIndex].src),
     ]);
 
-    texNoise = makeTexture(noiseImg);
+    texNoise = makeTexture(noiseImg, true);
     noiseSize = [noiseImg.naturalWidth, noiseImg.naturalHeight];
     texCurrent = makeTexture(firstImg);
     sizeA = [firstImg.naturalWidth, firstImg.naturalHeight];
 
     rafId = requestAnimationFrame(draw);
 
-    loadImg(media[(currentIndex + 1) % media.length].src).catch(() => {});
+    startTransition((currentIndex + 1) % media.length);
 
-    const interval = setInterval(() => {
-      startTransition((currentIndex + 1) % media.length);
-    }, SLIDE_MS);
-
-    return () => {
-      clearInterval(interval);
-      cancelAnimationFrame(rafId);
-    };
+    return () => cancelAnimationFrame(rafId);
   });
 </script>
 
