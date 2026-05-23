@@ -10,8 +10,9 @@
 
   let gl, prog;
   let texCurrent = null, texNext = null, texNoise = null;
-  let u_t, u_sizeA, u_sizeB, u_res, u_dpr;
+  let u_t, u_sizeA, u_sizeB, u_res, u_dpr, u_noiseSize;
   let sizeA = [1, 1], sizeB = [1, 1];
+  let noiseSize = [1, 1];
 
   let isTransitioning = false;
   let loading = false;
@@ -52,7 +53,8 @@
     u_sizeA = gl.getUniformLocation(prog, 'u_sizeA');
     u_sizeB = gl.getUniformLocation(prog, 'u_sizeB');
     u_res   = gl.getUniformLocation(prog, 'u_res');
-    u_dpr   = gl.getUniformLocation(prog, 'u_dpr');
+    u_dpr       = gl.getUniformLocation(prog, 'u_dpr');
+    u_noiseSize = gl.getUniformLocation(prog, 'u_noiseSize');
     gl.uniform1i(gl.getUniformLocation(prog, 'u_texA'), 0);
     gl.uniform1i(gl.getUniformLocation(prog, 'u_texB'), 1);
     gl.uniform1i(gl.getUniformLocation(prog, 'u_noise'), 2);
@@ -112,6 +114,7 @@
 
     gl.uniform2f(u_res, canvas.width, canvas.height);
     gl.uniform1f(u_dpr, devicePixelRatio);
+    gl.uniform2fv(u_noiseSize, noiseSize);
     gl.uniform1f(u_t, animating ? t : 1.0);
     gl.uniform2fv(u_sizeA, sizeA);
     gl.uniform2fv(u_sizeB, animating ? sizeB : sizeA);
@@ -164,6 +167,7 @@
     ]);
 
     texNoise = makeTexture(noiseImg);
+    noiseSize = [noiseImg.naturalWidth, noiseImg.naturalHeight];
     texCurrent = makeTexture(firstImg);
     sizeA = [firstImg.naturalWidth, firstImg.naturalHeight];
 

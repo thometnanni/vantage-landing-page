@@ -10,6 +10,7 @@ uniform vec2 u_res;
 uniform vec2 u_sizeA;
 uniform vec2 u_sizeB;
 uniform float u_dpr;
+uniform vec2 u_noiseSize;
 
 float hash(vec3 p) {
   p = fract(p * vec3(443.8975, 397.2973, 491.1871));
@@ -46,10 +47,10 @@ void main() {
   // work in CSS pixels so sizes are DPR-independent
   vec2 cssRes = u_res / u_dpr;
 
-  float bnVal = texture2D(u_noise, fract(v_uv * cssRes / 64.0)).r;
+  float bnVal = texture2D(u_noise, fract(v_uv * cssRes / u_noiseSize)).r;
 
   vec2 px = v_uv * cssRes;
-  float noiseVal = vnoise(vec3(px * 0.001, u_t * 3.0));
+  float noiseVal = vnoise(vec3(px * 0.003, u_t));
 
   // t=0 → all A, t=1 → all B
   float threshold = (1.0 - u_t) * 1.5 - 0.25 + (bnVal - 0.5) * 0.5;
