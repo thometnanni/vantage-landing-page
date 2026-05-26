@@ -74,7 +74,7 @@ void main() {
   float bnVal = texture2D(u_noise, v_uv * cssRes / u_noiseSize).r;
 
   vec2 px = v_uv * cssRes * 0.5;
-  float noiseVal = p5noise(px.x * 0.006, px.y * 0.006, u_t);
+  float noiseVal = p5noise(px.x * 0.001, px.y * 0.001, u_t);
 
   float useB = noiseVal < u_t + (bnVal - 0.5) * 0.5 ? 1.0 : 0.0;
 

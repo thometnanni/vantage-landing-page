@@ -1,17 +1,20 @@
 <script>
-  import { onMount } from 'svelte';
-  import VERT from '$lib/shaders/cover.vert?raw';
-  import FRAG from '$lib/shaders/cover.frag?raw';
+  import { onMount } from "svelte";
+  import VERT from "$lib/shaders/cover.vert?raw";
+  import FRAG from "$lib/shaders/cover.frag?raw";
 
   let media = [];
   let currentIndex = 0;
-  let caption = '';
+  let caption = "";
   let canvas;
 
   let gl, prog;
-  let texCurrent = null, texNext = null, texNoise = null;
+  let texCurrent = null,
+    texNext = null,
+    texNoise = null;
   let u_t, u_sizeA, u_sizeB, u_res, u_dpr, u_noiseSize;
-  let sizeA = [1, 1], sizeB = [1, 1];
+  let sizeA = [1, 1],
+    sizeB = [1, 1];
   let noiseSize = [1, 1];
 
   let isTransitioning = false;
@@ -21,9 +24,10 @@
   let rafId;
 
   const TRANSITION_MS = 5000;
+  const WAIT_MS = 1000;
 
   function initGL() {
-    gl = canvas.getContext('webgl');
+    gl = canvas.getContext("webgl");
     if (!gl) return false;
 
     const compile = (type, src) => {
@@ -43,20 +47,24 @@
 
     const buf = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-    const posLoc = gl.getAttribLocation(prog, 'a_pos');
+    gl.bufferData(
+      gl.ARRAY_BUFFER,
+      new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]),
+      gl.STATIC_DRAW,
+    );
+    const posLoc = gl.getAttribLocation(prog, "a_pos");
     gl.enableVertexAttribArray(posLoc);
     gl.vertexAttribPointer(posLoc, 2, gl.FLOAT, false, 0, 0);
 
-    u_t     = gl.getUniformLocation(prog, 'u_t');
-    u_sizeA = gl.getUniformLocation(prog, 'u_sizeA');
-    u_sizeB = gl.getUniformLocation(prog, 'u_sizeB');
-    u_res   = gl.getUniformLocation(prog, 'u_res');
-    u_dpr       = gl.getUniformLocation(prog, 'u_dpr');
-    u_noiseSize = gl.getUniformLocation(prog, 'u_noiseSize');
-    gl.uniform1i(gl.getUniformLocation(prog, 'u_texA'), 0);
-    gl.uniform1i(gl.getUniformLocation(prog, 'u_texB'), 1);
-    gl.uniform1i(gl.getUniformLocation(prog, 'u_noise'), 2);
+    u_t = gl.getUniformLocation(prog, "u_t");
+    u_sizeA = gl.getUniformLocation(prog, "u_sizeA");
+    u_sizeB = gl.getUniformLocation(prog, "u_sizeB");
+    u_res = gl.getUniformLocation(prog, "u_res");
+    u_dpr = gl.getUniformLocation(prog, "u_dpr");
+    u_noiseSize = gl.getUniformLocation(prog, "u_noiseSize");
+    gl.uniform1i(gl.getUniformLocation(prog, "u_texA"), 0);
+    gl.uniform1i(gl.getUniformLocation(prog, "u_texB"), 1);
+    gl.uniform1i(gl.getUniformLocation(prog, "u_noise"), 2);
     return true;
   }
 
@@ -75,7 +83,7 @@
   function loadImg(src) {
     return new Promise((resolve, reject) => {
       const img = new Image();
-      img.crossOrigin = 'anonymous';
+      img.crossOrigin = "anonymous";
       img.onload = () => resolve(img);
       img.onerror = reject;
       img.src = src;
@@ -98,7 +106,10 @@
     let animating = isTransitioning && texNext !== null;
 
     if (animating) {
-      t = Math.min((now - transitionStart) / TRANSITION_MS, 1.0);
+      t = (now - transitionStart) / TRANSITION_MS;
+      if (t >= 0.5) {
+        caption = media[pendingNextIndex]?.caption ?? "";
+      }
       if (t >= 1.0) {
         isTransitioning = false;
         animating = false;
@@ -107,9 +118,11 @@
         texNext = null;
         sizeA = [...sizeB];
         currentIndex = pendingNextIndex;
-        caption = media[currentIndex]?.caption ?? '';
         t = 1.0;
-        startTransition((currentIndex + 1) % media.length);
+        setTimeout(
+          () => startTransition((currentIndex + 1) % media.length),
+          WAIT_MS,
+        );
       }
     }
 
@@ -148,22 +161,24 @@
   }
 
   onMount(async () => {
-    const res = await fetch('https://api.are.na/v2/channels/vantage-3vctc210p7q/contents?per=100');
+    const res = await fetch(
+      "https://api.are.na/v2/channels/vantage-3vctc210p7q/contents?per=100",
+    );
     const data = await res.json();
     media = data.contents
-      .filter((b) => b.class === 'Image')
+      .filter((b) => b.class === "Image")
       .map((b) => ({
         src: b.image.original.url,
-        caption: b.title === 'image' ? '' : (b.title ?? ''),
+        caption: b.title === "image" ? "" : (b.title ?? ""),
       }));
 
     currentIndex = Math.floor(Math.random() * media.length);
-    caption = media[currentIndex]?.caption ?? '';
+    caption = media[currentIndex]?.caption ?? "";
 
     if (!initGL()) return;
 
     const [noiseImg, firstImg] = await Promise.all([
-      loadImg('/pattern.png'),
+      loadImg("/pattern.png"),
       loadImg(media[currentIndex].src),
     ]);
 
