@@ -41,9 +41,3 @@ body {
   src: url("/SpaceGrotesk-Medium.woff2");
   font-weight: bold;
 }
-
-@font-face {
-  font-family: space;
-  src: url("/SpaceGrotesk-Medium.woff2");
-  font-weight: bold;
-}

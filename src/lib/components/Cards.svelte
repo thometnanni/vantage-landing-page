@@ -19,6 +19,18 @@
     },
     {
       span: 1,
+      image: "/cards/demo-1.png",
+      title: "",
+      description: "",
+      links: [
+        {
+          text: "Perspectives on Brandenburger Tor",
+          href: "https://v-a-n-t-a-g-e.github.io/STORY-Perspectives-on-Brandenburger-Tor/",
+        },
+      ],
+    },
+    {
+      span: 1,
       image: "/cards/territory.png",
       title: "Territory",
       description:
@@ -33,17 +45,30 @@
     },
     {
       span: 1,
-      image: "/cards/guide-1.webp",
-      title: "Performing a Spatial Reconstruction in Vantage",
-      description:
-        "A getting started guide for creating 3d models in Territory and aligning imagery in Vantage",
+      image: "/cards/demo-3.png",
+      title: "",
+      description: "",
       links: [
         {
-          text: "Read",
+          text: "Vajont",
+          href: "https://v-a-n-t-a-g-e.github.io/STORY-Vajont/",
+        },
+      ],
+    },
+    {
+      span: 1,
+      image: "",
+      title: "Performing a Spatial Reconstruction",
+      description:
+        "In this guide, we demonstrate a complete spatial reconstruction workflow: generating a 3D model of Brandenburger Tor in Territory from OpenStreetMap data, then importing it into Vantage to align historical photographs against the geometry.<br><br> Using viewfinder mode, roll, FOV, and position adjustments, projections are precisely matched, enabling free exploration across perspectives.",
+      links: [
+        {
+          text: "Read more",
           href: "https://open.substack.com/pub/krisenstab/p/performing-a-spatial-reconstruction",
         },
       ],
     },
+
     {
       span: 1,
       image: "/cards/storyboard.png",
@@ -60,14 +85,26 @@
     },
     {
       span: 1,
-      image: "/cards/guide-2.png",
+      image: "",
       title: "From Research to Presentation",
       description:
-        "A guide to creating slideshows and scrollytellings from Vantage investigations.",
+        "In this guide, we demonstrate Storyboard, a tool for turning spatial research into interactive slideshows and scrollytellings.<br> Starting from a Vantage project, slides capture camera positions, perspectives, and visible models or projections.<br><br> Transitions are refined with waypoints and previewed in slideshow or scrollytelling mode, then exported as web packages.",
       links: [
         {
-          text: "Read",
+          text: "Read more",
           href: "https://krisenstab.substack.com/p/from-research-to-presentation",
+        },
+      ],
+    },
+    {
+      span: 1,
+      image: "/cards/demo-2.png",
+      title: "",
+      description: "",
+      links: [
+        {
+          text: "Silbersteinstraße",
+          href: "https://v-a-n-t-a-g-e.github.io/STORY-Silbersteinstrasse/",
         },
       ],
     },
